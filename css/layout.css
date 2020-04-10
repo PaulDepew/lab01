@@ -1,6 +1,12 @@
 
 @media only screen and (max-width: 767px) {
 
+body {
+    display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 75px 150px 125px 125px 250px 250px 80px;
+}
+
 body p {
     margin-left: 50%;
     position: relative;
@@ -13,7 +19,7 @@ nav {
 
 nav ul {
     padding-left: 40%;
-    height: 125px;
+    height: 75px;
     background-color: lightblue;
     border: 1px solid black;
 }
@@ -25,58 +31,62 @@ nav ul {
 
  }
 
+ header {
+     grid-area: 1 / 1 / 1 / 3;
+ }
+
 #b {
     display: block;
-    line-height: 150px;
+    grid-area: 2 / 1  / 2 / 3;
+    /* line-height: 150px; */
     background-color: lightcoral;
     border: 1px solid black;
 }
 
 #c {
-    width: 100%;
-    height: 125px;
+    /* width: 100%; */
+    grid-area: 3 / 1  / 3 / 3;
+    /* height: 125px; */
     background-color: lightslategray;
     border: 1px solid black;
 }
 
 #d {
-    width: 100%;
-    height: 125px;
+    /* width: 100%;
+    height: 125px; */
+    grid-area: 4 / 1  / 4 / 3;
     background-color: lightgreen;
     border: 1px solid black;
 }
 
 #e {
-    background-color: lightgreen;
+    background-color: olive;
+    grid-area: 5 / 1  / 5 / 2;
+    border: 1px solid black;
 }
 
 #f {
     background-color: lightsalmon;
+    border: 1px solid black;
 }
 
 #g {
     background-color: lightyellow;
+    border: 1px solid black;
 }
 
 #h {
     background-color: maroon;
-}
-main {
-    width: 100%;
-}
-
-main div {
-    /* margin: 10px; */
-    width: 50%;
-    float: left;
-    height: 250px ;
     border: 1px solid black;
 }
 
+
+
 footer {
-    clear:both;
+    /* clear:both;
     display: block;
-    height: 80px;
+    height: 80px; */
+    grid-area: 7 / 1  / 7 / 3;
     background-color: lightseagreen;
     border: 1px solid black;
 }
@@ -86,11 +96,19 @@ footer {
     body {
         width: 960px;
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 100px 200px 250px 150px;
     }
 
+   header {
+       grid-area: 1 / 1 / 1 / 6 ;
+       justify-content: center;
+   }
+   
     nav ul {
-        padding-left: 40%;
-        height: 125px;
+        padding-left: 50%;
+        height: 100px; 
         background-color: lightcoral;
         border: 1px solid black;
     }
@@ -108,17 +126,20 @@ footer {
 
    #b {
     background-color: lightblue;
-       float: left;
-       width: 25.7%;
-        height: 545px;   
+    grid-column: 1 ;
+    grid-row: 2 / 5;
+       /* float: left; */
+       /* width: 25.7%; */
+        /* height: 545px;    */
         border: 1px solid black;    
    }
    
    #c {
     display: inline-block;
-       width: 37.1%;
+       /* width: 37.1%;
        height: 125px;
-       margin: 0px;
+       margin: 0px; */
+       grid-area: 2 / 2 / 2 / 4;
        padding: 0px;
        box-sizing: border-box;
        background-color: lightslategray;
@@ -127,9 +148,10 @@ footer {
    
    #d {
     display: inline-block;
-       width: 37.15%;
-       height: 125px;
-       margin-left: -4px;
+       /* width: 37.15%;
+       height: 125px; */
+       /* margin-left: -4px; */
+       grid-area: 2 / 4 / 2 / 6;
        box-sizing: border-box;
        background-color: lightseagreen;
        border: 1px solid black;
@@ -138,30 +160,41 @@ footer {
    main {
        /* width: 100%; */
        box-sizing: border-box;
+    
+    justify-content: space-evenly;
 
    }
 
    #e {
+    border: 1px solid black;
     background-color:lightsalmon;
+    grid-area: 3 / 2 / 3 / 2;
+    /* display: inline-block; */
 }
 
 #f {
+    border: 1px solid black;
     background-color: lightgreen;
+   
 }
 
 #g {
+    border: 1px solid black;
     background-color: maroon;
+    
 }
 
 #h {
+    border: 1px solid black;
     background-color: lightyellow;
+    
 }
    
    main div {
        /* margin: 10px; */
-       width: 37.1%;
-       float: left;
-       height: 170px ;
+       /* width: 37.1%; */
+       /* float: left; */
+       /* height: 170px ; */
        box-sizing: border-box;
        border: 1px solid black;
 
@@ -169,11 +202,106 @@ footer {
    
    footer {
        /* clear: both; */
-       display: inline-block;
+       /* display: inline-block; */
        /* margin-left: 18px; */
-       width: 74.2%;
-       height: 80px;
+       /* width: 74.2%; */
+       /* height: 80px; */
+       grid-area: 4 / 2 / 4 / 6;
        background-color: pink;
        border: 1px solid black;
    }
    }
+
+   @media only screen and (max-width: 480px) {
+
+    body {
+        display: grid;
+            grid-template-columns:  1fr;
+            grid-template-rows: 75px 150px 125px 125px 250px 250px 250px 250px 80px;
+    }
+    
+    body p {
+        margin-left: 50%;
+        position: relative;
+        top: 45%;
+    }
+    
+    nav {
+        border: 3px thick black ;
+    }
+    
+    nav ul {
+        padding-left: 40%;
+        height: 75px;
+        background-color: lightgoldenrodyellow;
+        border: 1px solid black;
+    }
+     nav li {
+         width: inherit;
+         display: inline-block;
+         list-style: none; 
+         border: 3px thick black ;
+    
+     }
+    
+     header {
+         grid-area: 1 / 1 / 1 / 3;
+     }
+    
+    #b {
+        display: block;
+        grid-area: 2 / 1  / 2 / 3;
+        /* line-height: 150px; */
+        background-color: lime;
+        border: 1px solid black;
+    }
+    
+    #c {
+        /* width: 100%; */
+        grid-area: 3 / 1  / 3 / 3;
+        /* height: 125px; */
+        background-color: cornsilk;
+        border: 1px solid black;
+    }
+    
+    #d {
+        /* width: 100%;
+        height: 125px; */
+        grid-area: 4 / 1  / 4 / 3;
+        background-color: crimson;
+        border: 1px solid black;
+    }
+    
+    #e {
+        background-color: chartreuse;
+        grid-area: 5 / 1  / 5 / 2;
+        border: 1px solid black;
+    }
+    
+    #f {
+        background-color: brown;
+        border: 1px solid black;
+    }
+    
+    #g {
+        background-color: fuchsia;
+        border: 1px solid black;
+    }
+    
+    #h {
+        background-color: yellow;
+        border: 1px solid black;
+    }
+    
+    
+    
+    footer {
+        /* clear:both;
+        display: block;
+        height: 80px; */
+        grid-area: 7 / 1  / 7 / 3;
+        background-color: pink;
+        border: 1px solid black;
+    }
+    }
+    
